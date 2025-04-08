@@ -8,7 +8,7 @@
 int main(int argc, char** argv) {
     /* Welcome message */
     puts("Welcome to Skyler");
-    puts("Press Ctrl+c to Exit]\n");
+    puts("Press Ctrl+c to Exit\n");
 
     /* Infinite loop */
     while (1) {
