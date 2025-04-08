@@ -6,6 +6,7 @@
 
 
 int main(int argc, char** argv) {
+
     /* Welcome message */
     puts("Welcome to Skyler");
     puts("Press Ctrl+c to Exit\n");
@@ -20,7 +21,7 @@ int main(int argc, char** argv) {
         add_history(input);
 
         /* Print the input back to the user */
-        printf("No, you're a %s", input);
+        printf("No, you're a %s\n", input);
 
         /* Free memory allocated caused by readline */
         free(input);
