@@ -1,27 +1,29 @@
-/*
-GOAL: write an interactive prompt
-
-*/
 #include <stdio.h>
+#include <stdlib.h>
+#include <histedit.h>
+#include <string.h> 
+#include <editline/readline.h>
 
-int main(int argc, char** argv){
-    /* buffer to hold user input */
-    static char input[2048];
 
+int main(int argc, char** argv) {
+    /* Welcome message */
+    puts("Welcome to Skyler");
+    puts("Press Ctrl+c to Exit]\n");
 
-    puts("Welcome to skyler");
+    /* Infinite loop */
+    while (1) {
 
-    /* Infinite loop*/
-    while (1){
-        
-        /* output our stream */
-        fputs("skyler=>", stdout);
+        /* Prompt user */
+        char* input = readline("shell@skyler: =>");
 
-        /*  read line of user input*/
-        fgets(input, 2048, stdin);
+        /* Add the input to history */
+        add_history(input);
 
-        printf("No you're a %s", input);
+        /* Print the input back to the user */
+        printf("No, you're a %s", input);
 
+        /* Free memory allocated caused by readline */
+        free(input);
     }
 
     return 0;
