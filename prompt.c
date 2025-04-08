@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     while (1) {
 
         /* Prompt user */
-        char* input = readline("shell@skyler: =>");
+        char* input = readline("shell@skyler: => ");
 
         /* Add the input to history */
         add_history(input);
